@@ -1,7 +1,7 @@
-package com.advanced.modernJavaInAction.chapter1;
+package com.advanced.modernJavaInAction.part1;
 
-import com.advanced.modernJavaInAction.chapter1.domain.Apple;
-import com.advanced.modernJavaInAction.chapter1.type.Color;
+import com.advanced.modernJavaInAction.part1.domain.Apple;
+import com.advanced.modernJavaInAction.part1.type.Color;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package com.advanced.modernJavaInAction.chapter1.type;
+package com.advanced.modernJavaInAction.part1.type;
 
 import lombok.Getter;
 
