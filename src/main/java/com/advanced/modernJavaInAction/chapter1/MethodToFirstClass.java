@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 @Service
 public class MethodToFirstClass {
@@ -46,6 +47,18 @@ public class MethodToFirstClass {
             }
         }
         return ret;
+    }
+
+    public List<Apple> filterAppleWithStream(List<Apple> inventory, Predicate<Apple> p) {
+        return inventory.stream()
+                .filter(p)
+                .collect(Collectors.toList());
+    }
+
+    public List<Apple> filterAppleWithParallelStream(List<Apple> inventory, Predicate<Apple> p) {
+        return inventory.parallelStream()
+                .filter(p)
+                .collect(Collectors.toList());
     }
 
 }

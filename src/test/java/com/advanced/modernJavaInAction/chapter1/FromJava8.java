@@ -2,7 +2,6 @@ package com.advanced.modernJavaInAction.chapter1;
 
 import com.advanced.modernJavaInAction.chapter1.domain.Apple;
 import com.advanced.modernJavaInAction.chapter1.type.Color;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,6 +36,22 @@ public class FromJava8 {
 
         List<Apple> weightFiltered = service.filterApple(apples, (Apple a) -> a.getWeight() > 150);
         assertEquals(2, weightFiltered.size());
+    }
+
+    @Test
+    public void 람다_스트림으로_사과_필터링_하기() {
+        List<Apple> colorFiltered = service.filterAppleWithStream(apples, (Apple a) -> Color.GREEN == a.getColor());
+        assertEquals(2, colorFiltered.size());
+
+        List<Apple> weightFiltered = service.filterAppleWithStream(apples, (Apple a) -> a.getWeight() > 150);
+        assertEquals(2, weightFiltered.size());
+    }
+
+    @Test
+    public void 병렬스트림으로_사과_필터링_하기() {
+        List<Apple> colorFiltered = service.filterAppleWithStream(apples, Apple::isGreenApple);
+        List<Apple> colorFilteredParallel = service.filterAppleWithParallelStream(apples, Apple::isGreenApple);
+        assertEquals(2, colorFilteredParallel.size());
     }
 
     @BeforeAll
