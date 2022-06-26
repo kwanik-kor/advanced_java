@@ -1,6 +1,6 @@
-package com.advanced.modernJavaInAction.chapter1.domain;
+package com.advanced.modernJavaInAction.part1.domain;
 
-import com.advanced.modernJavaInAction.chapter1.type.Color;
+import com.advanced.modernJavaInAction.part1.type.Color;
 import lombok.Builder;
 import lombok.Getter;
 
