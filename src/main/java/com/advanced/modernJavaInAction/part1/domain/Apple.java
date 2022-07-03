@@ -7,10 +7,10 @@ import lombok.Getter;
 @Getter
 public class Apple {
     private Color color;
-    private int weight;
+    private Integer weight;
 
     @Builder
-    public Apple(Color color, int weight) {
+    public Apple(Color color, Integer weight) {
         this.color = color;
         this.weight = weight;
     }
