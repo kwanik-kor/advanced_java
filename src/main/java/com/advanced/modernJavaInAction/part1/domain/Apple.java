@@ -15,6 +15,11 @@ public class Apple {
         this.weight = weight;
     }
 
+    public Apple(Integer weight) {
+        this.color = Color.GREEN;
+        this.weight = weight;
+    }
+
     public static boolean isGreenApple(Apple apple) {
         return Color.GREEN == apple.getColor();
     }
